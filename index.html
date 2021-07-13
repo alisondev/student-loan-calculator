@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Loan Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student Loan Calculator</h1>
+    <p>This is a simple calculator you can use to plan payments on your student loans. Enter the current balance, average interest rate, and your planned monthly payment to estimate the payoff date.</p>
+
+    <form id="loanDetails">
+        <ul class="wrapper">
+            <li class="form-row">
+                <label for="currentBalance">Current Balance:</label>
+                <input type="text" id="currentBalance" name="currentBalance">
+            </li>
+            <li class="form-row">
+                <label for="interestRate">Interest Rate:</label>
+                <input type="text" id="interestRate" name="interestRate">
+            </li>
+            <li class="form-row">
+                <label for="monthlyPayment">Monthly Payment:</label>
+                <input type="text" id="monthlyPayment" name="monthlyPayment">
+            </li>
+            <li class="form-row">
+                <button type="button" id="calculate">Calculate</button>
+            </li>
+        </ul>
+    </form>
+
+    <p id="results"></p>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
