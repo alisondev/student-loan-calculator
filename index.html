@@ -6,36 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Loan Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Student Loan Calculator</h1>
-    <p>This is a simple calculator you can use to plan payments on your student loans. Enter the current balance, average interest rate, and your planned monthly payment to estimate the payoff date.</p>
+    <div class="wrapper">
+        <header>
+            <div class="hero-image">
+                <nav id="navbar" class="nonoverlay">
+                        <ul class="horizontal-nav">
+                            <li><a class="navlink" href="#introduction">Introduction</a></li>
+                            <li><a class="navlink" href="#instructions">Instructions</a></li>
+                            <li><a class="navlink" href="#calculator">Calculator</a></li>
+                        </ul>
+                    </nav>
 
-    <form id="loanDetails">
-        <ul class="wrapper">
-            <li class="form-row">
-                <label for="currentBalance">Current Balance:</label>
-                <input type="text" id="currentBalance" name="currentBalance">
-            </li>
-            <li class="form-row">
-                <label for="interestRate">Interest Rate:</label>
-                <input type="text" id="interestRate" name="interestRate">
-            </li>
-            <li class="form-row">
-                <label for="monthlyPayment">Monthly Payment:</label>
-                <input type="text" id="monthlyPayment" name="monthlyPayment">
-            </li>
-            <li class="form-row">
-                <button type="button" id="calculate">Calculate</button>
-            </li>
-        </ul>
-    </form>
+                <img id="menuicon" src="images/menu-white.png" alt="menu button" onclick="openNav()">
+                <nav id="overlaynavbar" class="overlay">
+                <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+                    <ul class="overlaycontent">
+                        <li><a class="navlink" href="#introduction">Introduction</a></li>
+                        <li><a class="navlink" href="#instructions">Instructions</a></li>
+                        <li><a class="navlink" href="#calculator">Calculator</a></li>   
+                    </ul>
+                </nav>
+        <div class="hero-text">
+            <h1>Student Loan Calculator</h1>
+            <p class="hero-p">
+                Step 1: Plan the work<br>
+                Step 2: Work the plan
+            </p>
+        </div>
+    </header>
 
-    <p id="results"></p>
-    <p id="payoffDate"></p>
-    <p id="emailP"></p>
+        <main>
+            <h2 id="introduction">Introduction</h2>
+            <p>
+                Managing student loans is never easy, but it doesn't have to involve guesswork or squinting at spreadsheets.
+            </p>
+            <p>
+                This is a simple calculator you can use to plan your payments. Use it to experiment with how increasing or decreasing the monthly payment, changing the interest rate (through refinancing), or reducing the current balance (by making a one-time payment) will impact the repayment term and the total cost of the loan.</p>
+            </p>
+            <hr>
+            
+            <h2 id="instructions">Instructions</h2>
+            <p>
+               In the form below, input your current loan balance, interest rate, and intended monthly payment. The calculator will determine how many payments it will take to reach a zero balance, the total amount you'll pay, including interest, and the estimated payoff date.
+            </p>
+            <hr>
+            
+            <h2 id="calculator">Calculator</h2>
+            <form id="loanDetails">
+                <ul class="formwrapper">
+                    <li class="form-row">
+                        <label for="currentBalance">Current Balance:</label>
+                        <input type="text" id="currentBalance" name="currentBalance">
+                    </li>
+                    <li class="form-row">
+                        <label for="interestRate">Interest Rate:</label>
+                        <input type="text" id="interestRate" name="interestRate">
+                    </li>
+                    <li class="form-row">
+                        <label for="monthlyPayment">Monthly Payment:</label>
+                        <input type="text" id="monthlyPayment" name="monthlyPayment">
+                    </li>
+                    <li class="form-row">
+                        <button type="button" id="calculate">Calculate</button>
+                    </li>
+                </ul>
+            </form>
+            <br>
+            <div id="results"></div>
+            <div id="payoffDate"></div>
+            <div id="emailP" class="formwrapper"></div>        
 
-    <script src="app.js"></script>
+        <script src="nav.js"></script>
+        <script src="app.js"></script>
+        </main>
 
-</body>
+        <footer>
+            <a href="#top">Back to top</a>
+            <br>
+            <div class="attribution">Menu icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+            </div>
+            <br>
+
+        </footer>
+
+    </div>
 </html>

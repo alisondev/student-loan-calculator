@@ -6,9 +6,9 @@ There is also an email field that allows the user to provide an email address an
 
 Features included to meet project requirements include the following:
 
-1. Implement a regular expression (regex) to ensure a field either a phone number or an email address is always stored and displayed in the same format. The email field validates the user input using a regex.
+1. Implement a regular expression (regex) to ensure a field either a phone number or an email address is always stored and displayed in the same format. The email field validates the user input (using a regex) when the user clicks the submit button.
 
 2. Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event). The app calculates the payoff date by starting with the current date.
 
-3. 
+3. Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application. The app includes an array populated with the average student loan debt by type of degree. The calculation results retrieve and display a random value from this array.
 
