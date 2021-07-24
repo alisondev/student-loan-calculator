@@ -3,7 +3,6 @@ let numberOfYears;
 
 let averageLoanData = [];
 averageLoanData.push("Undergraduate: $28,950","Graduate: $71,000", "MBA: $66,300", "Law: $145,000", "Pharmacy: $179,514", "Medical: $201,490", "Dental: $292,169");
-console.log(averageLoanData);
 
 function didYouKnow(){
     const random = Math.floor(Math.random() * averageLoanData.length);
@@ -48,7 +47,7 @@ function calculate(){
     let endMonthBalance = currentBalance;
     let paymentCounter = 0;
     do {
-        endMonthBalance = endMonthBalance * 1.005 - monthlyPayment;
+        endMonthBalance = endMonthBalance * (1 + ((interestRate * 0.01)/12)) - monthlyPayment;
         paymentCounter++;
     } while (endMonthBalance > 0 && paymentCounter <= 1464);
     
@@ -56,7 +55,7 @@ function calculate(){
     let numberOfYears = numberOfPayments/12;
 
     if (paymentCounter <= 1464){
-        const totalPaid = paymentCounter * (monthlyPayment -1) + endMonthBalance;
+        const totalPaid = (paymentCounter -1) * monthlyPayment + endMonthBalance;
         const totalInterestPaid = totalPaid - currentBalance;
         document.getElementById('results').innerHTML = `<h2>Results</h2><p>It will take you ${numberOfPayments} payment(s) to reach a zero balance.</p><p>You will have paid approximately $${addCommas(totalPaid.toFixed(2))}, including $${addCommas(totalInterestPaid.toFixed(2))} in interest.</p>`;
         addEmailField();
