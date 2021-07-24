@@ -1,5 +1,4 @@
 const button = document.getElementById('calculate');
-let numberOfPayments;
 let numberOfYears;
 
 function addEmailField(){
@@ -38,32 +37,26 @@ function calculate(){
         endMonthBalance = endMonthBalance * 1.005 - monthlyPayment;
         paymentCounter++;
     } while (endMonthBalance > 0 && paymentCounter <= 1464);
+    
     numberOfPayments = paymentCounter;
     let numberOfYears = numberOfPayments/12;
 
     if (paymentCounter <= 1464){
         const totalPaid = paymentCounter * (monthlyPayment -1) + endMonthBalance;
         const totalInterestPaid = totalPaid - currentBalance;
-        document.getElementById('results').innerHTML = `It will take you ${numberOfPayments} payments to reach a zero balance. That is ${numberOfYears.toFixed(1)} years. You will have paid approximately $${totalPaid.toFixed(2)}, including $${totalInterestPaid.toFixed(2)} in interest.`;
+        document.getElementById('results').innerHTML = `It will take you ${numberOfPayments} payments to reach a zero balance. You will have paid approximately $${totalPaid.toFixed(2)}, including $${totalInterestPaid.toFixed(2)} in interest.`;
         addEmailField();
-        calculateDate();
+
+        const now = new Date();
+        const then = new Date();
+        then.setDate(then.getDate() + (numberOfPayments * 30.44));
+        const days = Math.floor((then - now) / (1000*60*60*24));
+    
+        document.getElementById('payoffDate').innerHTML = `Your loan will be paid off by ${then.toDateString()}, which is ${numberOfYears.toFixed(1)} years, ${numberOfPayments} months, or ${days} days from now.`
     } else {
         document.getElementById('results').innerHTML = `It will take you more than 122 years to pay off the loan. That is longer than the lifespan of the oldest human ever. Try increasing your payments or decreasing the interest rate.`;
         addEmailField();
     }
 }
-
-/*
-function calculateDate(){
-    const now = new Date();
-    let year = now.getFullYear();
-    let month = now.getMonth();
-    let day = now.getDate();
-    let then = new Date(year + numberOfYears, month, day);
-    let days = (then - now)/(60*60*24*1000);
-
-    document.getElementById('payoffDate').innerHTML = `Your loan will be paid off by ${then}, which is ${days} days from now.`
-}
-*/
 
 button.addEventListener('click', calculate);
