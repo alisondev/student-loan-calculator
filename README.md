@@ -6,8 +6,10 @@ There is also an email field that allows the user to provide an email address an
 
 Features included to meet project requirements include the following:
 
-1. Implement a regular expression (regex) to ensure a field either a phone number or an email address is always stored and displayed in the same format. The email field validates the user input (using a regex) and an alert when the user clicks the submit button.
+1. Crate and use a function that accepts two or more values (parameters), calculates or determines a new value based on those inputs, and returns a new value. Aside from the main calculate function, there is a bonusCalc function which accepts two parameters. This is used in the results section to demonstrate the impact of interest, by passing it the user's input for current balance and monthly payments.
 
-2. Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event). The app calculates days to payoff by starting with the current date.
+2. Implement a regular expression (regex) to ensure a field either a phone number or an email address is always stored and displayed in the same format. The email field validates the user input (using a regex) and an alert when the user clicks the submit button.
 
-3. Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application. The app creates an array and populates it with the average student loan debt by type of degree. The calculation function retrieves and displays a random value from this array in the results section.
+3. Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event). The app calculates days to payoff by starting with the current date.
+
+4. Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application. The app creates an array and populates it with the average student loan debt by type of degree. The calculation function retrieves and displays a random value from this array in the results section.

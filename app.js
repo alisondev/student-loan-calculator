@@ -26,10 +26,6 @@ function addEmailField(){
     `
 }
 
-function addCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 function validateEmail(){
     if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailMe.email.value))
         {
@@ -37,6 +33,14 @@ function validateEmail(){
         }
         alert("Please enter a valid email address.")
         return (false)
+}
+
+function bonusCalc(a, b){
+    return a/b;
+}
+
+function addCommas(x){
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function calculate(){
@@ -66,6 +70,8 @@ function calculate(){
         const days = Math.floor((then - now) / (1000*60*60*24));
     
         document.getElementById('payoffDate').innerHTML = `<p>Your loan will be paid off by ${then.toDateString()}, which is ${numberOfYears.toFixed(1)} year(s), ${numberOfPayments} month(s), or ${days} days from now.</p><p>But who's counting?</p>
+        <h2>What impact does the interest have?</h2>
+        <p>If your interest rate was zero, it would take just ${bonusCalc(currentBalance, monthlyPayment)} payment(s) to pay off the loan.</p>
         <h2>You're not alone</h2>
         <p>Check out the average student loan debt for this degree:<br>${didYouKnow()}</p>
         `
