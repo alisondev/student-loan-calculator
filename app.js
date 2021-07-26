@@ -47,7 +47,7 @@ function calculate(){
     let endMonthBalance = currentBalance;
     let paymentCounter = 0;
     do {
-        endMonthBalance = endMonthBalance * (1 + ((interestRate * 0.01)/12)) - monthlyPayment;
+        endMonthBalance = endMonthBalance * (1 + (interestRate * 0.01/12)) - monthlyPayment;
         paymentCounter++;
     } while (endMonthBalance > 0 && paymentCounter <= 1464);
     
@@ -55,7 +55,7 @@ function calculate(){
     let numberOfYears = numberOfPayments/12;
 
     if (paymentCounter <= 1464){
-        const totalPaid = (paymentCounter -1) * monthlyPayment + endMonthBalance;
+        const totalPaid = paymentCounter * monthlyPayment + endMonthBalance;
         const totalInterestPaid = totalPaid - currentBalance;
         document.getElementById('results').innerHTML = `<h2>Results</h2><p>It will take you ${numberOfPayments} payment(s) to reach a zero balance.</p><p>You will have paid approximately $${addCommas(totalPaid.toFixed(2))}, including $${addCommas(totalInterestPaid.toFixed(2))} in interest.</p>`;
         addEmailField();
