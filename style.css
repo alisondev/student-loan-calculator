@@ -194,7 +194,7 @@ hr {
   }
 }
 
-/* formatting for larger screens */
+/* formatting for medium screens */
 @media screen and (min-width: 800px) {
   p {
     max-width: 800px;
@@ -211,7 +211,7 @@ hr {
   }
 }
 
-/* navbar and div adjustment for larger screens */
+/* navbar adjustment for larger screens */
 @media screen and (min-width: 1200px) {
   #navbar {
       display: block;
