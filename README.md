@@ -13,3 +13,5 @@ Features included to meet project requirements include the following:
 3. Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event). The app calculates days to payoff by starting with the current date.
 
 4. Create an array, dictionary or list, populate it with multiple values, retrieve at least one value, and use or display it in your application. The app creates an array and populates it with the average student loan debt by type of degree. The calculation function retrieves and displays a random value from this array in the results section.
+
+Additionally, there are media queries targeting minimum screen size, to adjust the flex direction on form field labels at 800px, and replace the hamburger menu with a horizontal navigation bar at 1200px.

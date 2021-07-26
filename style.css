@@ -57,31 +57,37 @@ p {
 .formwrapper {
   background-color: whitesmoke;
   list-style-type: none;
-  width: 40%;
+  width: 100%;
   margin: auto;
   padding: 0;
   border-radius: 3px;
 }
+
 .form-row {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   padding: .5em;
 }
+
 .form-row > label {
   padding: .5em 1em .5em 0;
   flex: 1;
 }
+
 .form-row > input {
   flex: 2;
 }
+
 .form-row > input,
 .form-row > button {
   padding: .5em;
 }
+
 .form-row > button {
- background: gray;
- color: white;
- border: 0;
+background: gray;
+color: white;
+border: 0;
 }
 
 input {
@@ -189,12 +195,20 @@ hr {
 }
 
 /* formatting for larger screens */
-@media screen and (min-width: 1000px) {
-p {
-  max-width: 1000px;
-  margin: auto;
-  padding-bottom: 15px;
-}
+@media screen and (min-width: 800px) {
+  p {
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 15px;
+  }
+
+  .formwrapper {
+    width: 40%;
+  }
+
+  .form-row {
+    flex-direction: row;
+  }
 }
 
 /* navbar and div adjustment for larger screens */
