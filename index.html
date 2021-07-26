@@ -59,15 +59,18 @@
                 <ul class="formwrapper">
                     <li class="form-row">
                         <label for="currentBalance">Current Balance:</label>
-                        <input type="text" id="currentBalance" name="currentBalance">
+                        <input type="number" min="0" id="currentBalance" name="currentBalance" oninput="this.value = 
+                        !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                     </li>
                     <li class="form-row">
                         <label for="interestRate">Interest Rate:</label>
-                        <input type="text" id="interestRate" name="interestRate">
+                        <input type="number" min="0" id="interestRate" name="interestRate" oninput="this.value = 
+                        !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                     </li>
                     <li class="form-row">
                         <label for="monthlyPayment">Monthly Payment:</label>
-                        <input type="text" id="monthlyPayment" name="monthlyPayment">
+                        <input type="number" min="0" id="monthlyPayment" name="monthlyPayment" oninput="this.value = 
+                        !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
                     </li>
                     <li class="form-row">
                         <button type="button" id="calculate">Calculate</button>
