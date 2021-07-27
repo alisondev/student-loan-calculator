@@ -36,7 +36,7 @@ function validateEmail(){
 }
 
 function bonusCalc(a, b){
-    return a/b;
+    return Math.ceil(a/b);
 }
 
 function addCommas(x){
